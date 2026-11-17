@@ -1,0 +1,64 @@
+[
+  {
+    "topic": "Order sensitivity of a local code judge",
+    "selected": true,
+    "status": "feasible_now",
+    "source_urls": [
+      "https://www.anthropic.com/research/building-strong-safety-evaluations",
+      "https://arxiv.org/abs/2306.05685"
+    ],
+    "source_dates": [
+      "2026-11-13",
+      "2023-06-09; revised 2023-12-24"
+    ],
+    "claim": "Swapping presentation order may change a judge decision; stable decisions may still be wrong.",
+    "experiment": "Eight executable authored code pairs, both A/B orders, two installed local models; eight tie controls per model.",
+    "baseline": "Canonical presentation of the identical code strings, paired with reversed presentation.",
+    "metrics": "Correct judgments/16, paired consistency/8, changed choices/8, consistently wrong/8, correct ties/8 per model.",
+    "data": "Authored contracts/implementations, executable tests, no downloaded candidate code.",
+    "resources": "48 sequential local generations; INVARIANT/current Codex for scorer implementation and validation.",
+    "runtime": "Approximately 10\u201330 minutes depending on local inference.",
+    "limitations": "Single seed, tiny simple coding sample, older quantized models; no human preference or population bias claim.",
+    "classification": "New local diagnostic, not MT-Bench reproduction; no code-repair agent feedback as in earlier experiment."
+  },
+  {
+    "topic": "Dual-control agent security",
+    "selected": false,
+    "status": "needs_more_preparation",
+    "source_urls": [
+      "https://arxiv.org/abs/2609.24662"
+    ],
+    "source_dates": [
+      "2026-09-21; rediscovered via Telegram 2026-11-16"
+    ],
+    "claim": "Shared environment control changes the security evaluation setting.",
+    "experiment": "Would require an owned multi-turn stateful environment with validated attack and benign controls.",
+    "baseline": "Static-user environment versus controlled user state changes.",
+    "metrics": "Task success, policy violation and false rejection by scenario.",
+    "data": "Paper abstract checked; executable scenarios and full methodology not audited today.",
+    "resources": "Local adaptation possible, faithful 14-model study exceeds installed model set.",
+    "runtime": "Unknown until environment audit.",
+    "limitations": "Cannot validate conference-acceptance news from the abstract; no external attacks; overlaps yesterday if reduced to a single stale-write race.",
+    "classification": "Deferred rather than claiming a faithful replication."
+  },
+  {
+    "topic": "Memory compaction and retention of constraints",
+    "selected": false,
+    "status": "needs_more_preparation",
+    "source_urls": [
+      "https://www.anthropic.com/research/components-of-agent-memory"
+    ],
+    "source_dates": [
+      "2026-11-06"
+    ],
+    "claim": "Agent memory representation and reorganization can affect which prior constraints remain available.",
+    "experiment": "Paired authored transcripts and frozen compacted representations with independently scored obligations.",
+    "baseline": "Full transcript versus fixed memory representation.",
+    "metrics": "Constraint retrieval and task correctness, prompt tokens.",
+    "data": "Guide introduction and memory hierarchy inspected; would need balanced transcripts and compaction controls.",
+    "resources": "Installed local models, no API spend.",
+    "runtime": "Unknown until fixture validation.",
+    "limitations": "Not a reproduction of vendor memory evaluations; risks confounding omission with inference errors.",
+    "classification": "Deferred; judge diagnostic has a more direct execution oracle today."
+  }
+]

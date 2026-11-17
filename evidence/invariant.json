@@ -1,0 +1,183 @@
+{
+  "request_id": "judge-order-lab-20261117-v1",
+  "study_id": "study-bbde031b07844712949971b00e462413",
+  "execution": {
+    "study_id": "study-bbde031b07844712949971b00e462413",
+    "state": "completed",
+    "receipts": [
+      {
+        "schema_version": 1,
+        "study_id": "study-bbde031b07844712949971b00e462413",
+        "attempt_id": "attempt-218ec3e5fee981c56544df97c1eca106",
+        "definition_digest": "3481a5a5e4d224315023de5d62156de8808b7ea7ccd48cbf4b2a3721fd5ead98",
+        "baseline_digest": "455c5a0c663a48711702c2cba7c1893c0c49e3e31af73875c79071c921fc68db",
+        "result_digest": "e274ebf1b12f4f169e68bd085da9026236a413daf6091f15ceb49d39c8d4f11a",
+        "state": "succeeded",
+        "passed": true,
+        "evaluation": {
+          "status": "completed",
+          "reason": null,
+          "reused_validation": true,
+          "validation_receipt": "docker-volume://invariant-state-v2/workspaces/9d673975a43f7d93198618dc/experiments/attempts/attempt-218ec3e5fee981c56544df97c1eca106/validations/3ab3d993555bcfacc1b65d397b51dcf71d3f09e1aba9438c004236bf20090f2a/receipt.json",
+          "contract_version": "81469d47a9f1efe04951ebcdcbe66a933ae0c3bad608a3367f97718b12da6e4c",
+          "command": "python3 -B tests/run_checks.py",
+          "test_exit_code": 0,
+          "checks": {
+            "tests": 8,
+            "failures": 0,
+            "errors": 0
+          },
+          "fixed_test_count": 11,
+          "evidence_path": "docker-volume://invariant-state-v2/workspaces/9d673975a43f7d93198618dc/experiments/attempts/attempt-218ec3e5fee981c56544df97c1eca106/evaluation"
+        },
+        "resources": {
+          "expected_digest": "91d37c5e6396c47845558ece35416bfd075a708758985db89ade158ccb50a2d8",
+          "observed_digest": "91d37c5e6396c47845558ece35416bfd075a708758985db89ade158ccb50a2d8"
+        },
+        "inference_usage": {
+          "complete": true,
+          "final": {
+            "cached_input_tokens": 61568,
+            "input_tokens": 79269,
+            "output_tokens": 2324,
+            "reasoning_output_tokens": 108,
+            "total_tokens": 81593
+          },
+          "path": "docker-volume://invariant-state-v2/workspaces/9d673975a43f7d93198618dc/experiments/attempts/attempt-218ec3e5fee981c56544df97c1eca106/runner.usage.jsonl",
+          "problems": [],
+          "reconciled": true,
+          "response_count": 5
+        },
+        "execution_commands": {
+          "provenance": "executor command-completion events; not worker assertions",
+          "commands": [
+            {
+              "command": "/bin/bash -lc \"pwd && cat evaluation.py && python3 -c \\\"import json; t=json.load(open('tasks.json')); c=json.load(open('cases.json')); print(json.dumps(t[:1],indent=2)); print(json.dumps(c[:3],indent=2)); print([(x['id'],x.get('preserve_inputs')) for x in t]); print([(x['kind'],x['order']) for x in c])\\\"\"",
+              "cwd": "/workspace",
+              "status": "completed",
+              "exit_code": 0
+            },
+            {
+              "command": "/bin/bash -lc \"python3 -c \\\"import json; t=json.load(open('tasks.json')); print([(x['id'], x['tests']) for x in t])\\\" && sed -n '1,200p' run.py && sed -n '1,180p' tests/run_checks.py && git status --short\"",
+              "cwd": "/workspace",
+              "status": "failed",
+              "exit_code": 128
+            }
+          ],
+          "omitted_commands": 1
+        },
+        "receipt_digest": "62217372b0acac592cb991680fd635914580f5a43adcf897c80a6be4a5b4fe9f"
+      }
+    ],
+    "summary": {
+      "scheduled": 1,
+      "runner_successes": 1,
+      "failed": 0,
+      "cancelled": 0,
+      "pending": 0,
+      "evaluated": 1,
+      "missing_evaluations": 0,
+      "quality_passes": 1,
+      "quality_failures": 0,
+      "quality_judged": 1,
+      "missing_quality": 0,
+      "quality_pass_rate_over_scheduled": 1.0
+    },
+    "selection": {
+      "attempt_id": null,
+      "revision": 0
+    },
+    "trials": [
+      {
+        "attempt_id": "attempt-218ec3e5fee981c56544df97c1eca106",
+        "variant_id": "medium",
+        "state": "succeeded",
+        "passed": true,
+        "duration_seconds": 78.21122360229492,
+        "reason": "COMPLETED"
+      }
+    ],
+    "trials_omitted": 0,
+    "usage": {
+      "model_calls": 1,
+      "input_tokens": 79269,
+      "cached_input_tokens": 61568,
+      "output_tokens": 2324,
+      "reasoning_output_tokens": 108,
+      "total_tokens": 81593,
+      "complete": true
+    }
+  },
+  "decision": {
+    "state": "completed",
+    "decision": {
+      "approved": true,
+      "reason": "The patch implements the specified execution oracle, strict three-field scoring, schedule validation, and all required aggregate metrics. Coordinator-verified invariant_validate evidence confirms all eight fixed checks passed with protected resources preserved. No correctness or regression issues identified.",
+      "review_digest": "abb30fdd93a999bcac5c13ee1a44a80f3df220eb3d00ebce44c25410caf012f4"
+    },
+    "model": "gpt-6.1-sol",
+    "effort": "medium",
+    "usage": {
+      "total": {
+        "totalTokens": 8523,
+        "inputTokens": 8375,
+        "cachedInputTokens": 0,
+        "cacheWriteInputTokens": 0,
+        "outputTokens": 148,
+        "reasoningOutputTokens": 82
+      },
+      "last": {
+        "totalTokens": 8523,
+        "inputTokens": 8375,
+        "cachedInputTokens": 0,
+        "cacheWriteInputTokens": 0,
+        "outputTokens": 148,
+        "reasoningOutputTokens": 82
+      },
+      "modelContextWindow": 475000
+    },
+    "inference_usage": {
+      "response_count": 1,
+      "complete": true,
+      "reconciled": true,
+      "problems": [],
+      "path": "docker-volume://invariant-state-v2/workspaces/9d673975a43f7d93198618dc/tasks/256e1bd1e53670f92d935dda95006634f0a94e6f7a3432e621fca09ee7bb8e1a-reviews/abb30fdd93a999bcac5c13ee1a44a80f3df220eb3d00ebce44c25410caf012f4/usage.jsonl",
+      "final": {
+        "input_tokens": 8375,
+        "cached_input_tokens": 0,
+        "output_tokens": 148,
+        "reasoning_output_tokens": 82,
+        "total_tokens": 8523
+      }
+    }
+  },
+  "application": {
+    "plan_id": "plan-28607876b5c341feb8d080372cb9834c",
+    "attempt_id": "attempt-218ec3e5fee981c56544df97c1eca106",
+    "applied": true,
+    "verification": {
+      "schema_version": 1,
+      "verified": true,
+      "verified_at": 1794913526.0106814,
+      "plan_digest": "abb30fdd93a999bcac5c13ee1a44a80f3df220eb3d00ebce44c25410caf012f4",
+      "result_digest": "e274ebf1b12f4f169e68bd085da9026236a413daf6091f15ceb49d39c8d4f11a",
+      "changed_paths": 1,
+      "written_entries_digest": "e605e4d7665d1f621f34ffcfedf95c18972e5931332fa9837fc8cd67481b81d9",
+      "protected_inputs": 11,
+      "protected_entries_digest": "6ca34cd258c2e292dd95754bf9c7e9ab52d6895f51146e16d2021079ee903790"
+    },
+    "container_applied": true,
+    "host_delivery_state": "committed"
+  },
+  "usage": {
+    "model_calls": 2,
+    "input_tokens": 87644,
+    "cached_input_tokens": 61568,
+    "output_tokens": 2472,
+    "reasoning_output_tokens": 190,
+    "total_tokens": 90116,
+    "complete": true
+  },
+  "completion_state": "applied",
+  "original_receipt_sha256": "178273738405bb08fcdf1821f404fd72112caf8ef6ae14894f1e318cfe199846"
+}

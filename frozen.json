@@ -1,0 +1,20 @@
+{
+  "frozen_at": "2026-11-17T11:06:17.065731+00:00",
+  "planned_calls": 48,
+  "sha256": {
+    "PROTOCOL.md": "d23aace35ff15fbab6b11c47f8569b30f826161b56ec01b334fa0ea64c684fc2",
+    "tasks.json": "f86f83999aa5b295abb28e3ad064f4515d4b63baf6f227a33c8364433c020ca2",
+    "cases.json": "8f63d6fead9906573755510e0025f7708367e49ca856abd90016cd0d5f6bcd11",
+    "schedule.json": "2c8811832cab85892e074e2f69fb3941a02277b710c8cd020718e8d8df0e3b09",
+    "make_fixtures.py": "82f2cf4d4ad2ac5787a16aa5db2911d9f17a0819165a1869ba2b5a23ad344e17",
+    "request.py": "721df67de3e1ade028fdc8ecac43c22277ac48c88d18c9c1c0bbb40e49bd16c6",
+    "evaluation.py": "7167684d2a9ee1341adb5140adddb53653a9e30a8b70912759c864224262caf1",
+    "tests/run_checks.py": "d6ca759e0330d3af5caaeb1611e460812a8443f0f75855b707287bd00ed9fde3",
+    "run.py": "2820fab4cc0189dce322b8335e874e73e12bd9e8da2791e8668c5a40d4e4942a",
+    "audit.py": "108ae58c57e64bf04a625b5e1079731965590132fddc27c34a9fc82d8c3c8c06",
+    "evidence/models.json": "42a77730b790993c765a4edaaf6be31083e1d34f739bd30dbd07172b5646c777",
+    "evidence/versions.json": "5c9bfc212f6ea33a8783c77d4fa46a62551e187760e2291d5f1c3f8b205e665f",
+    "evidence/gold.json": "b7c72e2c48c1fb807aeb1091f935af495cc14b4ec2ce0f77cfef145c5bb3356d",
+    "evidence/scorer-controls.json": "ff04403610197c192502219492ff244dbed8b6300ed204fa2e012798616113ee"
+  }
+}

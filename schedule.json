@@ -1,0 +1,242 @@
+[
+  {
+    "id": "qwen2.5-chunks-control",
+    "model": "qwen2.5:7b",
+    "case_id": "chunks-control"
+  },
+  {
+    "id": "qwen2.5-descendant-reversed",
+    "model": "qwen2.5:7b",
+    "case_id": "descendant-reversed"
+  },
+  {
+    "id": "qwen2.5-chunks-reversed",
+    "model": "qwen2.5:7b",
+    "case_id": "chunks-reversed"
+  },
+  {
+    "id": "qwen2.5-dedup-canonical",
+    "model": "qwen2.5:7b",
+    "case_id": "dedup-canonical"
+  },
+  {
+    "id": "qwen2.5-overlap-control",
+    "model": "qwen2.5:7b",
+    "case_id": "overlap-control"
+  },
+  {
+    "id": "qwen2.5-merge-canonical",
+    "model": "qwen2.5:7b",
+    "case_id": "merge-canonical"
+  },
+  {
+    "id": "qwen2.5-utf8_size-canonical",
+    "model": "qwen2.5:7b",
+    "case_id": "utf8_size-canonical"
+  },
+  {
+    "id": "qwen2.5-merge-control",
+    "model": "qwen2.5:7b",
+    "case_id": "merge-control"
+  },
+  {
+    "id": "qwen2.5-descendant-control",
+    "model": "qwen2.5:7b",
+    "case_id": "descendant-control"
+  },
+  {
+    "id": "qwen2.5-expiry-control",
+    "model": "qwen2.5:7b",
+    "case_id": "expiry-control"
+  },
+  {
+    "id": "qwen2.5-dedup-control",
+    "model": "qwen2.5:7b",
+    "case_id": "dedup-control"
+  },
+  {
+    "id": "qwen2.5-descendant-canonical",
+    "model": "qwen2.5:7b",
+    "case_id": "descendant-canonical"
+  },
+  {
+    "id": "qwen2.5-merge-reversed",
+    "model": "qwen2.5:7b",
+    "case_id": "merge-reversed"
+  },
+  {
+    "id": "qwen2.5-expiry-reversed",
+    "model": "qwen2.5:7b",
+    "case_id": "expiry-reversed"
+  },
+  {
+    "id": "qwen2.5-expiry-canonical",
+    "model": "qwen2.5:7b",
+    "case_id": "expiry-canonical"
+  },
+  {
+    "id": "qwen2.5-clamp-control",
+    "model": "qwen2.5:7b",
+    "case_id": "clamp-control"
+  },
+  {
+    "id": "qwen2.5-utf8_size-reversed",
+    "model": "qwen2.5:7b",
+    "case_id": "utf8_size-reversed"
+  },
+  {
+    "id": "qwen2.5-clamp-canonical",
+    "model": "qwen2.5:7b",
+    "case_id": "clamp-canonical"
+  },
+  {
+    "id": "qwen2.5-clamp-reversed",
+    "model": "qwen2.5:7b",
+    "case_id": "clamp-reversed"
+  },
+  {
+    "id": "qwen2.5-utf8_size-control",
+    "model": "qwen2.5:7b",
+    "case_id": "utf8_size-control"
+  },
+  {
+    "id": "qwen2.5-overlap-canonical",
+    "model": "qwen2.5:7b",
+    "case_id": "overlap-canonical"
+  },
+  {
+    "id": "qwen2.5-overlap-reversed",
+    "model": "qwen2.5:7b",
+    "case_id": "overlap-reversed"
+  },
+  {
+    "id": "qwen2.5-chunks-canonical",
+    "model": "qwen2.5:7b",
+    "case_id": "chunks-canonical"
+  },
+  {
+    "id": "qwen2.5-dedup-reversed",
+    "model": "qwen2.5:7b",
+    "case_id": "dedup-reversed"
+  },
+  {
+    "id": "qwen3-chunks-control",
+    "model": "qwen3:8b",
+    "case_id": "chunks-control"
+  },
+  {
+    "id": "qwen3-descendant-reversed",
+    "model": "qwen3:8b",
+    "case_id": "descendant-reversed"
+  },
+  {
+    "id": "qwen3-chunks-reversed",
+    "model": "qwen3:8b",
+    "case_id": "chunks-reversed"
+  },
+  {
+    "id": "qwen3-dedup-canonical",
+    "model": "qwen3:8b",
+    "case_id": "dedup-canonical"
+  },
+  {
+    "id": "qwen3-overlap-control",
+    "model": "qwen3:8b",
+    "case_id": "overlap-control"
+  },
+  {
+    "id": "qwen3-merge-canonical",
+    "model": "qwen3:8b",
+    "case_id": "merge-canonical"
+  },
+  {
+    "id": "qwen3-utf8_size-canonical",
+    "model": "qwen3:8b",
+    "case_id": "utf8_size-canonical"
+  },
+  {
+    "id": "qwen3-merge-control",
+    "model": "qwen3:8b",
+    "case_id": "merge-control"
+  },
+  {
+    "id": "qwen3-descendant-control",
+    "model": "qwen3:8b",
+    "case_id": "descendant-control"
+  },
+  {
+    "id": "qwen3-expiry-control",
+    "model": "qwen3:8b",
+    "case_id": "expiry-control"
+  },
+  {
+    "id": "qwen3-dedup-control",
+    "model": "qwen3:8b",
+    "case_id": "dedup-control"
+  },
+  {
+    "id": "qwen3-descendant-canonical",
+    "model": "qwen3:8b",
+    "case_id": "descendant-canonical"
+  },
+  {
+    "id": "qwen3-merge-reversed",
+    "model": "qwen3:8b",
+    "case_id": "merge-reversed"
+  },
+  {
+    "id": "qwen3-expiry-reversed",
+    "model": "qwen3:8b",
+    "case_id": "expiry-reversed"
+  },
+  {
+    "id": "qwen3-expiry-canonical",
+    "model": "qwen3:8b",
+    "case_id": "expiry-canonical"
+  },
+  {
+    "id": "qwen3-clamp-control",
+    "model": "qwen3:8b",
+    "case_id": "clamp-control"
+  },
+  {
+    "id": "qwen3-utf8_size-reversed",
+    "model": "qwen3:8b",
+    "case_id": "utf8_size-reversed"
+  },
+  {
+    "id": "qwen3-clamp-canonical",
+    "model": "qwen3:8b",
+    "case_id": "clamp-canonical"
+  },
+  {
+    "id": "qwen3-clamp-reversed",
+    "model": "qwen3:8b",
+    "case_id": "clamp-reversed"
+  },
+  {
+    "id": "qwen3-utf8_size-control",
+    "model": "qwen3:8b",
+    "case_id": "utf8_size-control"
+  },
+  {
+    "id": "qwen3-overlap-canonical",
+    "model": "qwen3:8b",
+    "case_id": "overlap-canonical"
+  },
+  {
+    "id": "qwen3-overlap-reversed",
+    "model": "qwen3:8b",
+    "case_id": "overlap-reversed"
+  },
+  {
+    "id": "qwen3-chunks-canonical",
+    "model": "qwen3:8b",
+    "case_id": "chunks-canonical"
+  },
+  {
+    "id": "qwen3-dedup-reversed",
+    "model": "qwen3:8b",
+    "case_id": "dedup-reversed"
+  }
+]

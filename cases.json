@@ -1,0 +1,242 @@
+[
+  {
+    "id": "chunks-canonical",
+    "task_id": "chunks",
+    "kind": "main",
+    "order": "canonical",
+    "options": [
+      "def solve(items, n):\n    if n <= 0:\n        raise ValueError(n)\n    return [items[i:i+n] for i in range(0, len(items), n)]\n",
+      "def solve(items, n):\n    if n <= 0:\n        raise ValueError(n)\n    return [items[i:i+n] for i in range(0, len(items)-n+1, n)]\n"
+    ]
+  },
+  {
+    "id": "chunks-reversed",
+    "task_id": "chunks",
+    "kind": "main",
+    "order": "reversed",
+    "options": [
+      "def solve(items, n):\n    if n <= 0:\n        raise ValueError(n)\n    return [items[i:i+n] for i in range(0, len(items)-n+1, n)]\n",
+      "def solve(items, n):\n    if n <= 0:\n        raise ValueError(n)\n    return [items[i:i+n] for i in range(0, len(items), n)]\n"
+    ]
+  },
+  {
+    "id": "chunks-control",
+    "task_id": "chunks",
+    "kind": "both_valid",
+    "order": "control",
+    "options": [
+      "def solve(items, n):\n    if n <= 0:\n        raise ValueError(n)\n    return [items[i:i+n] for i in range(0, len(items), n)]\n",
+      "def solve(items, n):\n    if n < 1:\n        raise ValueError(n)\n    result = []\n    while items:\n        result.append(items[:n])\n        items = items[n:]\n    return result\n"
+    ]
+  },
+  {
+    "id": "dedup-canonical",
+    "task_id": "dedup",
+    "kind": "main",
+    "order": "canonical",
+    "options": [
+      "def solve(items):\n    result = []\n    for item in items:\n        if item not in result:\n            result.append(item)\n    return result\n",
+      "def solve(items):\n    return sorted(set(items))\n"
+    ]
+  },
+  {
+    "id": "dedup-reversed",
+    "task_id": "dedup",
+    "kind": "main",
+    "order": "reversed",
+    "options": [
+      "def solve(items):\n    return sorted(set(items))\n",
+      "def solve(items):\n    result = []\n    for item in items:\n        if item not in result:\n            result.append(item)\n    return result\n"
+    ]
+  },
+  {
+    "id": "dedup-control",
+    "task_id": "dedup",
+    "kind": "both_valid",
+    "order": "control",
+    "options": [
+      "def solve(items):\n    result = []\n    for item in items:\n        if item not in result:\n            result.append(item)\n    return result\n",
+      "def solve(items):\n    return list(dict.fromkeys(items))\n"
+    ]
+  },
+  {
+    "id": "overlap-canonical",
+    "task_id": "overlap",
+    "kind": "main",
+    "order": "canonical",
+    "options": [
+      "def solve(a, b):\n    return a[0] < b[1] and b[0] < a[1]\n",
+      "def solve(a, b):\n    return a[0] <= b[1] and b[0] <= a[1]\n"
+    ]
+  },
+  {
+    "id": "overlap-reversed",
+    "task_id": "overlap",
+    "kind": "main",
+    "order": "reversed",
+    "options": [
+      "def solve(a, b):\n    return a[0] <= b[1] and b[0] <= a[1]\n",
+      "def solve(a, b):\n    return a[0] < b[1] and b[0] < a[1]\n"
+    ]
+  },
+  {
+    "id": "overlap-control",
+    "task_id": "overlap",
+    "kind": "both_valid",
+    "order": "control",
+    "options": [
+      "def solve(a, b):\n    return a[0] < b[1] and b[0] < a[1]\n",
+      "def solve(a, b):\n    return max(a[0], b[0]) < min(a[1], b[1])\n"
+    ]
+  },
+  {
+    "id": "clamp-canonical",
+    "task_id": "clamp",
+    "kind": "main",
+    "order": "canonical",
+    "options": [
+      "def solve(value, lo, hi):\n    return min(hi, max(lo, value))\n",
+      "def solve(value, lo, hi):\n    return max(hi, min(lo, value))\n"
+    ]
+  },
+  {
+    "id": "clamp-reversed",
+    "task_id": "clamp",
+    "kind": "main",
+    "order": "reversed",
+    "options": [
+      "def solve(value, lo, hi):\n    return max(hi, min(lo, value))\n",
+      "def solve(value, lo, hi):\n    return min(hi, max(lo, value))\n"
+    ]
+  },
+  {
+    "id": "clamp-control",
+    "task_id": "clamp",
+    "kind": "both_valid",
+    "order": "control",
+    "options": [
+      "def solve(value, lo, hi):\n    return min(hi, max(lo, value))\n",
+      "def solve(value, lo, hi):\n    if value < lo:\n        return lo\n    if value > hi:\n        return hi\n    return value\n"
+    ]
+  },
+  {
+    "id": "merge-canonical",
+    "task_id": "merge",
+    "kind": "main",
+    "order": "canonical",
+    "options": [
+      "def solve(base, override):\n    result = base.copy()\n    result.update(override)\n    return result\n",
+      "def solve(base, override):\n    result = base.copy()\n    result.update({k:v for k,v in override.items() if v})\n    return result\n"
+    ]
+  },
+  {
+    "id": "merge-reversed",
+    "task_id": "merge",
+    "kind": "main",
+    "order": "reversed",
+    "options": [
+      "def solve(base, override):\n    result = base.copy()\n    result.update({k:v for k,v in override.items() if v})\n    return result\n",
+      "def solve(base, override):\n    result = base.copy()\n    result.update(override)\n    return result\n"
+    ]
+  },
+  {
+    "id": "merge-control",
+    "task_id": "merge",
+    "kind": "both_buggy",
+    "order": "control",
+    "options": [
+      "def solve(base, override):\n    result = base.copy()\n    result.update({k:v for k,v in override.items() if v})\n    return result\n",
+      "def solve(base, override):\n    result = base.copy()\n    result.update({k:v for k,v in override.items() if v})\n    return result\n"
+    ]
+  },
+  {
+    "id": "descendant-canonical",
+    "task_id": "descendant",
+    "kind": "main",
+    "order": "canonical",
+    "options": [
+      "import posixpath\ndef solve(root, path):\n    root = posixpath.normpath(root)\n    path = posixpath.normpath(path)\n    return path != root and posixpath.commonpath([root, path]) == root\n",
+      "import posixpath\ndef solve(root, path):\n    root = posixpath.normpath(root)\n    path = posixpath.normpath(path)\n    return path != root and path.startswith(root)\n"
+    ]
+  },
+  {
+    "id": "descendant-reversed",
+    "task_id": "descendant",
+    "kind": "main",
+    "order": "reversed",
+    "options": [
+      "import posixpath\ndef solve(root, path):\n    root = posixpath.normpath(root)\n    path = posixpath.normpath(path)\n    return path != root and path.startswith(root)\n",
+      "import posixpath\ndef solve(root, path):\n    root = posixpath.normpath(root)\n    path = posixpath.normpath(path)\n    return path != root and posixpath.commonpath([root, path]) == root\n"
+    ]
+  },
+  {
+    "id": "descendant-control",
+    "task_id": "descendant",
+    "kind": "both_buggy",
+    "order": "control",
+    "options": [
+      "import posixpath\ndef solve(root, path):\n    root = posixpath.normpath(root)\n    path = posixpath.normpath(path)\n    return path != root and path.startswith(root)\n",
+      "import posixpath\ndef solve(root, path):\n    root = posixpath.normpath(root)\n    path = posixpath.normpath(path)\n    return path != root and path.startswith(root)\n"
+    ]
+  },
+  {
+    "id": "utf8_size-canonical",
+    "task_id": "utf8_size",
+    "kind": "main",
+    "order": "canonical",
+    "options": [
+      "def solve(text):\n    return len(text.encode(\"utf-8\"))\n",
+      "def solve(text):\n    return len(text)\n"
+    ]
+  },
+  {
+    "id": "utf8_size-reversed",
+    "task_id": "utf8_size",
+    "kind": "main",
+    "order": "reversed",
+    "options": [
+      "def solve(text):\n    return len(text)\n",
+      "def solve(text):\n    return len(text.encode(\"utf-8\"))\n"
+    ]
+  },
+  {
+    "id": "utf8_size-control",
+    "task_id": "utf8_size",
+    "kind": "both_buggy",
+    "order": "control",
+    "options": [
+      "def solve(text):\n    return len(text)\n",
+      "def solve(text):\n    return len(text)\n"
+    ]
+  },
+  {
+    "id": "expiry-canonical",
+    "task_id": "expiry",
+    "kind": "main",
+    "order": "canonical",
+    "options": [
+      "def solve(now, expires):\n    return now >= expires\n",
+      "def solve(now, expires):\n    return now > expires\n"
+    ]
+  },
+  {
+    "id": "expiry-reversed",
+    "task_id": "expiry",
+    "kind": "main",
+    "order": "reversed",
+    "options": [
+      "def solve(now, expires):\n    return now > expires\n",
+      "def solve(now, expires):\n    return now >= expires\n"
+    ]
+  },
+  {
+    "id": "expiry-control",
+    "task_id": "expiry",
+    "kind": "both_buggy",
+    "order": "control",
+    "options": [
+      "def solve(now, expires):\n    return now > expires\n",
+      "def solve(now, expires):\n    return now > expires\n"
+    ]
+  }
+]

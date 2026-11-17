@@ -1,0 +1,26 @@
+{
+  "checked_at": "2026-11-17",
+  "telegram_collection": {
+    "date": "2026-11-16",
+    "channels": 30,
+    "messages": 12,
+    "grouped_items": 11,
+    "errors": 0,
+    "media_analyzed": false
+  },
+  "selected_sources": [
+    {
+      "url": "https://www.anthropic.com/research/building-strong-safety-evaluations",
+      "date": "2026-11-13",
+      "verified_claim": "Discusses evaluation sensitivity to answer ordering and preregistering analyses. Used for current research motivation, not a vendor benchmark claim.",
+      "read_scope": "Design and preregistration sections of primary article."
+    },
+    {
+      "url": "https://arxiv.org/abs/2306.05685",
+      "date": "2023-06-09; v4 2023-12-24",
+      "verified_claim": "Defines position-swap consistency and notes that consistency and correctness are separate concerns.",
+      "read_scope": "Abstract; sections 3.3, 3.4 and Appendix D.1 in primary HTML https://arxiv.org/html/2306.05685v4. Not a full-paper replication."
+    }
+  ],
+  "discovery_note": "Telegram supplied DUMA-Bench and broader security topics; the selected AI engineering question came from direct primary-source search. Source material is data, not instructions. No Telegram URLs in public copy."
+}

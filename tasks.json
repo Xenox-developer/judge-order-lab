@@ -1,0 +1,359 @@
+[
+  {
+    "id": "chunks",
+    "contract": "solve(items, n) splits a list into consecutive lists of at most n items, keeping a final short group. Return [] for empty input. For n <= 0 raise ValueError (a subclass is allowed).",
+    "valid": "def solve(items, n):\n    if n <= 0:\n        raise ValueError(n)\n    return [items[i:i+n] for i in range(0, len(items), n)]\n",
+    "buggy": "def solve(items, n):\n    if n <= 0:\n        raise ValueError(n)\n    return [items[i:i+n] for i in range(0, len(items)-n+1, n)]\n",
+    "alternative": "def solve(items, n):\n    if n < 1:\n        raise ValueError(n)\n    result = []\n    while items:\n        result.append(items[:n])\n        items = items[n:]\n    return result\n",
+    "tests": [
+      {
+        "args": [
+          [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          2
+        ],
+        "expected": [
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5
+          ]
+        ]
+      },
+      {
+        "args": [
+          [],
+          3
+        ],
+        "expected": []
+      },
+      {
+        "args": [
+          [
+            1
+          ],
+          4
+        ],
+        "expected": [
+          [
+            1
+          ]
+        ]
+      },
+      {
+        "args": [
+          [
+            1
+          ],
+          0
+        ],
+        "error": "ValueError"
+      }
+    ],
+    "preserve_inputs": false
+  },
+  {
+    "id": "dedup",
+    "contract": "solve(items) returns unique integers in first-occurrence order. Do not sort. Input is a list; do not mutate it.",
+    "valid": "def solve(items):\n    result = []\n    for item in items:\n        if item not in result:\n            result.append(item)\n    return result\n",
+    "buggy": "def solve(items):\n    return sorted(set(items))\n",
+    "alternative": "def solve(items):\n    return list(dict.fromkeys(items))\n",
+    "tests": [
+      {
+        "args": [
+          [
+            3,
+            1,
+            3,
+            2
+          ]
+        ],
+        "expected": [
+          3,
+          1,
+          2
+        ]
+      },
+      {
+        "args": [
+          []
+        ],
+        "expected": []
+      },
+      {
+        "args": [
+          [
+            -1,
+            0,
+            -1
+          ]
+        ],
+        "expected": [
+          -1,
+          0
+        ]
+      }
+    ],
+    "preserve_inputs": true
+  },
+  {
+    "id": "overlap",
+    "contract": "solve(a, b) returns whether half-open intervals [a[0],a[1]) and [b[0],b[1]) overlap. Each interval has strictly increasing integer endpoints. Touching endpoints do not overlap.",
+    "valid": "def solve(a, b):\n    return a[0] < b[1] and b[0] < a[1]\n",
+    "buggy": "def solve(a, b):\n    return a[0] <= b[1] and b[0] <= a[1]\n",
+    "alternative": "def solve(a, b):\n    return max(a[0], b[0]) < min(a[1], b[1])\n",
+    "tests": [
+      {
+        "args": [
+          [
+            0,
+            2
+          ],
+          [
+            2,
+            4
+          ]
+        ],
+        "expected": false
+      },
+      {
+        "args": [
+          [
+            0,
+            3
+          ],
+          [
+            2,
+            5
+          ]
+        ],
+        "expected": true
+      },
+      {
+        "args": [
+          [
+            -3,
+            -1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "expected": false
+      }
+    ],
+    "preserve_inputs": false
+  },
+  {
+    "id": "clamp",
+    "contract": "solve(value, lo, hi) clamps an integer value to the inclusive integer range lo..hi, where lo <= hi. Return the nearest endpoint when outside; otherwise return value.",
+    "valid": "def solve(value, lo, hi):\n    return min(hi, max(lo, value))\n",
+    "buggy": "def solve(value, lo, hi):\n    return max(hi, min(lo, value))\n",
+    "alternative": "def solve(value, lo, hi):\n    if value < lo:\n        return lo\n    if value > hi:\n        return hi\n    return value\n",
+    "tests": [
+      {
+        "args": [
+          5,
+          0,
+          10
+        ],
+        "expected": 5
+      },
+      {
+        "args": [
+          -2,
+          0,
+          10
+        ],
+        "expected": 0
+      },
+      {
+        "args": [
+          12,
+          0,
+          10
+        ],
+        "expected": 10
+      },
+      {
+        "args": [
+          3,
+          3,
+          3
+        ],
+        "expected": 3
+      }
+    ],
+    "preserve_inputs": false
+  },
+  {
+    "id": "merge",
+    "contract": "solve(base, override) returns a new dictionary with override values taking precedence, including None, False, zero and empty strings. Do not modify either input dictionary.",
+    "valid": "def solve(base, override):\n    result = base.copy()\n    result.update(override)\n    return result\n",
+    "buggy": "def solve(base, override):\n    result = base.copy()\n    result.update({k:v for k,v in override.items() if v})\n    return result\n",
+    "alternative": "def solve(base, override):\n    return {**base, **override}\n",
+    "tests": [
+      {
+        "args": [
+          {
+            "x": 1
+          },
+          {
+            "x": null
+          }
+        ],
+        "expected": {
+          "x": null
+        }
+      },
+      {
+        "args": [
+          {
+            "x": true,
+            "y": 2
+          },
+          {
+            "x": false,
+            "y": 0,
+            "z": ""
+          }
+        ],
+        "expected": {
+          "x": false,
+          "y": 0,
+          "z": ""
+        }
+      },
+      {
+        "args": [
+          {},
+          {}
+        ],
+        "expected": {}
+      }
+    ],
+    "preserve_inputs": true
+  },
+  {
+    "id": "descendant",
+    "contract": "solve(root, path) checks lexical POSIX containment: root and path are absolute paths, may contain .., and no symlinks are involved. Return True only for a strict descendant after normalizing dot components; root itself is False. No filesystem access.",
+    "valid": "import posixpath\ndef solve(root, path):\n    root = posixpath.normpath(root)\n    path = posixpath.normpath(path)\n    return path != root and posixpath.commonpath([root, path]) == root\n",
+    "buggy": "import posixpath\ndef solve(root, path):\n    root = posixpath.normpath(root)\n    path = posixpath.normpath(path)\n    return path != root and path.startswith(root)\n",
+    "alternative": "import posixpath\ndef solve(root, path):\n    root = posixpath.normpath(root)\n    path = posixpath.normpath(path)\n    return path != root and path.startswith(root.rstrip(\"/\") + \"/\")\n",
+    "tests": [
+      {
+        "args": [
+          "/safe",
+          "/safe2/x"
+        ],
+        "expected": false
+      },
+      {
+        "args": [
+          "/safe",
+          "/safe/x"
+        ],
+        "expected": true
+      },
+      {
+        "args": [
+          "/safe",
+          "/safe/../outside"
+        ],
+        "expected": false
+      },
+      {
+        "args": [
+          "/safe",
+          "/safe"
+        ],
+        "expected": false
+      },
+      {
+        "args": [
+          "/",
+          "/a"
+        ],
+        "expected": true
+      }
+    ],
+    "preserve_inputs": false
+  },
+  {
+    "id": "utf8_size",
+    "contract": "solve(text) returns the number of bytes in the UTF-8 encoding of a Python string. It is not the number of Unicode code points.",
+    "valid": "def solve(text):\n    return len(text.encode(\"utf-8\"))\n",
+    "buggy": "def solve(text):\n    return len(text)\n",
+    "alternative": "def solve(text):\n    encoded = bytes(text, encoding=\"utf-8\")\n    return len(encoded)\n",
+    "tests": [
+      {
+        "args": [
+          "café"
+        ],
+        "expected": 5
+      },
+      {
+        "args": [
+          "🙂"
+        ],
+        "expected": 4
+      },
+      {
+        "args": [
+          ""
+        ],
+        "expected": 0
+      },
+      {
+        "args": [
+          "abc"
+        ],
+        "expected": 3
+      }
+    ],
+    "preserve_inputs": false
+  },
+  {
+    "id": "expiry",
+    "contract": "solve(now, expires) returns True exactly when a timestamp is expired: expiration occurs at expires, including the equality boundary. Both arguments are integer timestamps.",
+    "valid": "def solve(now, expires):\n    return now >= expires\n",
+    "buggy": "def solve(now, expires):\n    return now > expires\n",
+    "alternative": "def solve(now, expires):\n    return not now < expires\n",
+    "tests": [
+      {
+        "args": [
+          10,
+          10
+        ],
+        "expected": true
+      },
+      {
+        "args": [
+          9,
+          10
+        ],
+        "expected": false
+      },
+      {
+        "args": [
+          11,
+          10
+        ],
+        "expected": true
+      }
+    ],
+    "preserve_inputs": false
+  }
+]
