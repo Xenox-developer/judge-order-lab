@@ -1,0 +1,22 @@
+{
+  "model_calls": 2,
+  "input_tokens": 87644,
+  "cached_input_tokens": 61568,
+  "output_tokens": 2472,
+  "reasoning_output_tokens": 190,
+  "total_tokens": 90116,
+  "complete": true,
+  "native_sessions": 2,
+  "native_responses": 6,
+  "note": "Complete available development worker plus reviewer usage; sessions differ from response count. Cached input and reasoning output are subsets. Local measured Ollama usage is recorded separately; host chat usage unavailable. No dollar estimate.",
+  "measured_local_usage": {
+    "qwen2.5:7b": {
+      "prompt_eval_count": 4933,
+      "eval_count": 967
+    },
+    "qwen3:8b": {
+      "prompt_eval_count": 5125,
+      "eval_count": 958
+    }
+  }
+}

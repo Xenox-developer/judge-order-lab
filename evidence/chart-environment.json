@@ -1,0 +1,7 @@
+{
+  "matplotlib": "3.10.3",
+  "source": "results/audit.json",
+  "script": "plot.py",
+  "transform": "Raw audited numerators with fixed denominators. No smoothing, normalization, confidence intervals or missing-case exclusion.",
+  "destination": "LinkedIn results image; factual metric/model names, units and counts only."
+}
